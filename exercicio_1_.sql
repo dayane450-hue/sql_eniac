@@ -119,10 +119,11 @@ Dicas para o desafio:
 
 SELECT 
 	a.NOME_ALUNO AS 'Aluno Destaque',
-	AVG(m.NOTA_FINAL) as 'Média de Nota'
+	ROUND(AVG(m.NOTA_FINAL), 2) as 'Média de Nota'
 FROM ALUNOS a
 INNER JOIN MATRICULAS m 
 	ON a.ID_ALUNO = m.ID_ALUNO 
 GROUP BY A.ID_ALUNO 
 ORDER BY AVG(m.NOTA_FINAL) DESC
 LIMIT 1
+
